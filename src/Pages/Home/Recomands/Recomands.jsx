@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from 'react';
+
 import Sectiontitle from '../../../Components/Sectiontitle/Sectiontitle';
 import RecomandsCard from '../RecomandsCard/RecomandsCard';
+import useMenu from '../../../hooks/useMenu';
 
 const Recomands = () => {
 
-    const [recoData,setRecomdata] = useState(null)
+    const [menu] = useMenu();
 
-    useEffect(()=>{
-        fetch('../../../../public/menu.json')
-        .then(res=>res.json())
-        .then(data=>{
-            const recomandsData = data.filter(dt=>dt.category==='salad')
-            const splicedRecom = recomandsData?.slice(0,3)
-            setRecomdata(splicedRecom);
-        })
-    },[])
-
-
+    const recomands = menu?.filter(data=>data.category==='salad');
+    const recoData = recomands?.slice(0,3);
 
     return (
         <div>
