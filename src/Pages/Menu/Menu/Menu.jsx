@@ -5,6 +5,9 @@ import Sectiontitle from '../../../Components/Sectiontitle/Sectiontitle';
 
 
 const Menu = () => {
+
+    const [menu] = 
+
     return (
         <div>
             <Helmet>
@@ -12,6 +15,7 @@ const Menu = () => {
             </Helmet>
             <Cover bgImg={menuBanner} title="Our menu" subtitle='WOULD YOU LIKE TO TRY A DISH'></Cover>
             <Sectiontitle subheading="Don't miss" heading="Today's offer"></Sectiontitle>
+
         </div>
     );
 };
