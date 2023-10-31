@@ -1,4 +1,3 @@
-import React from 'react';
 import MenuItem from '../../Pages/Shared/MenuItem/MenuItem';
 
 const Items = ({Item}) => {
