@@ -6,6 +6,7 @@ import 'react-tabs/style/react-tabs.css';
 import useMenu from '../../hooks/useMenu';
 import Card from '../../Components/Card/Card';
 import OrderTabPannel from '../../Components/OrderTabPannel/OrderTabPannel';
+import { Helmet } from 'react-helmet-async';
 
 const Orderfood = () => {
     const [tabIndex, setTabindex] = useState(0);
@@ -18,6 +19,9 @@ const Orderfood = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Bistro Boss || Order</title>
+            </Helmet>
             <Cover bgImg={coverphoto} title="Order Food" subtitle="WOULD YOU LIKE TO TRY A DISH"></Cover>
             <div className='my-10'>
                 <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabindex(index)}>
