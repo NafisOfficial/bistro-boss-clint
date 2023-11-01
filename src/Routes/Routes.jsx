@@ -18,11 +18,11 @@ import Orderfood from "../Pages/Orderfood/Orderfood";
           element:<Home></Home>
         },
         {
-          path:'/menu',
+          path:'menu',
           element:<Menu></Menu>
         },
         {
-          path:'/order',
+          path:'order/:catagory',
           element:<Orderfood></Orderfood>
         }
       ]

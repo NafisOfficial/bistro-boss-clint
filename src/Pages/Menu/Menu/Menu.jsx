@@ -19,9 +19,7 @@ const Menu = () => {
     const salad = menu?.filter(data => data?.category === "salad");
     const soup = menu?.filter(data => data?.category === "soup");
 
-    const favoriteFood = <>
-        <button className="btn block mx-auto border-0 border-b-4 btn-outline text-center mb-4 uppercase">Offer your favorite food</button>
-    </>
+    
 
     return (
         <div>
@@ -32,35 +30,30 @@ const Menu = () => {
             <Sectiontitle subheading="Don't miss" heading="Today's offer"></Sectiontitle>
             <div>
                 <Items Item={offered}></Items>
-                {favoriteFood}
             </div>
             <div className='my-12'>
                 <Cover bgImg={menuBanner2} title="Desserts" subtitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></Cover>
             </div>
             <div>
-                <Items Item={dessert}></Items>
-                {favoriteFood}
+                <Items Item={dessert} title="dessert"></Items>
             </div>
             <div className='my-12'>
                 <Cover bgImg={menuBanner3} title="Pizza" subtitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></Cover>
             </div>
             <div>
-                <Items Item={pizza}></Items>
-                {favoriteFood}
+                <Items Item={pizza} title="pizza"></Items>
             </div>
             <div className='my-12'>
                 <Cover bgImg={menuBanner4} title="Salad" subtitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></Cover>
             </div>
             <div>
-                <Items Item={salad}></Items>
-                {favoriteFood}
+                <Items Item={salad} title="salad"></Items>
             </div>
             <div className='my-12'>
                 <Cover bgImg={menuBanner5} title="Soup" subtitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></Cover>
             </div>
             <div>
-                <Items Item={soup}></Items>
-                {favoriteFood}
+                <Items Item={soup} title="soup"></Items>
             </div>
         </div>
     );

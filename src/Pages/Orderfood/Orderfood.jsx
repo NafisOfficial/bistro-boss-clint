@@ -4,7 +4,6 @@ import coverphoto from '../../assets/shop/banner2.jpg'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import useMenu from '../../hooks/useMenu';
-import Card from '../../Components/Card/Card';
 import OrderTabPannel from '../../Components/OrderTabPannel/OrderTabPannel';
 import { Helmet } from 'react-helmet-async';
 
