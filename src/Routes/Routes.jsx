@@ -29,7 +29,7 @@ import Login from "../Pages/Login/Login";
         {
           path:'/login',
           element:<Login></Login>
-        }
+        },
       ]
     },
   ]);
