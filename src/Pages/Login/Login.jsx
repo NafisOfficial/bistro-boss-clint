@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import item from '../../assets/others/authentication2.png'
 import './login.css'
 import { Link } from 'react-router-dom';
@@ -7,17 +8,39 @@ import { PiFacebookLogo } from 'react-icons/pi';
 import { BsGithub } from 'react-icons/bs';
 const Login = () => {
 
+ 
+    useEffect(()=>{
+        loadCaptchaEnginge(4);
+    },[])
+
+    const captchaValue = useRef(null);
+
+    const [disable,isDisable] = useState(true);
 
     const handlelogin = event =>{
+
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        const captcha = form.captcha.value;
 
-        console.log(email,password,captcha);
+        
+        console.log(email,password);
         form.reset();
     }
+
+    const handleCaptcha = event =>{
+
+        event.preventDefault();
+
+        const value = captchaValue.current.value;
+        if (validateCaptcha(value)==true) {
+            isDisable(false);
+        }else {
+            isDisable(true);
+        }
+    }
+
 
 
     return (
@@ -43,10 +66,12 @@ const Login = () => {
                                 <input type="password" name='password' placeholder="Enter your password" className="input bg-white" required />
                             </div>
                             <div className="form-control">
-                                <input type="text" name='captcha' placeholder="Enter captcha" className="input bg-white" required />
+                            <LoadCanvasTemplate />
+                                <input type="text" ref={captchaValue} name='captcha' placeholder="Enter captcha" className="input bg-white" required />
+                                <button onClick={handleCaptcha} className="btn btn-outline btn-accent btn-xs mt-4">verify</button>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn bg-[#FDDAA8] text-white">Sign in</button>
+                                <button disabled={disable} className="btn bg-[#cc9d5a] text-white">Sign in</button>
                             </div>
 
                             <p className='text-[#cc9d5a]'>New here? Create a new account ! <Link className='text-blue-700'>Click here</Link></p>
